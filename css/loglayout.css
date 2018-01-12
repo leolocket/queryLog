@@ -1,0 +1,25 @@
+.queryLogHeader {
+    text-align: center;
+}
+
+.container-fluid {
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+
+.flexcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flexcontainer {
+    display: -webkit-flex;
+    display: flex;
+}

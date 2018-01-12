@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='//cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.18/dist/yasqe.min.css' rel='stylesheet' type='text/css'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='//cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.18/dist/yasqe.bundled.min.js'></script>
+    <script src='//cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.18/dist/yasqe.min.js'></script>
+    <!--- CodeMirror --->
+    <script src="lib/codemirror.js"></script>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="mode/sparql/sparql.js"></script>
+    <!--- YASQUE --->
+    <!-- CSS --->
+    <link href='//cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.18/dist/yasqe.min.css' rel='stylesheet' type='text/css'/>
+    <!--- JS --->
+    <script src='//cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.18/dist/yasqe.bundled.min.js'></script>
+    <script src='//cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.18/dist/yasqe.min.js'></script>
+    <!--- <script src="js/script.js"></script> --->
+</head>
+<!--- Kopfzeile --->
+<div class="container-fluid" style="background-color: lightblue">
+<div class="row">
+    <h1 class="text-center">Query Log - Last Queries<div class="row"><small>Gotta catch them all!</small></div></h1>
+</div>
+</div>
+</header>
+
+<article>
+    <!--- Inhalt --->
+    <div class="flexcontainer">
+        <div class="modal-body-row">
+            <div class="col-md-6">
+                <div class="table-responsive">
+                    <table class="table">
+                        <div class="row">
+                            <tr>
+                                <div class="col-lg-1">
+                                    <td>ID</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td>Date</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td>Status</td>
+                                </div>
+                                <div class="col-lg-7">
+                                    <td>Query</td>
+                                </div>
+                            </tr>
+                        </div>
+                        <div class="row">
+                            <tr>
+                                <div class="col-lg-1">
+                                    <td class="info">#1</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">24.12.2024</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="success">200 - OK</td>
+                                </div>
+                                <div class="col-lg-3">
+                                    <td class="info">SELECT . FROM . WHERE</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">
+                                        <button class="btn-visualize" style="width :25px; height:25px;background: url(img/graph.svg) center no-repeat; background-size: 100% 100%" ></button>
+                                    </td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">
+                                    <button class="btn-details" style="width :25px; height:25px;background: url(img/question_mark.svg) center no-repeat; background-size: 100% 100%"></button>
+                                    </td>
+                                </div>
+                            </tr>
+                        </div>
+                        <div class="row">
+                            <tr>
+                                <div class="col-lg-1">
+                                    <td class="info">#2</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">24.11.2024</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="danger">500 - Rejected</td>
+                                </div>
+                                <div class="col-lg-3">
+                                    <td class="info">SELECT . FROM . WHERE</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">
+                                        <button class="btn-visualize" style="width :25px; height:25px;background: url(img/graph.svg) center no-repeat; background-size: 100% 100%"></button>
+                                    </td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">
+                                        <button class="btn-details" style="width :25px; height:25px;background: url(img/question_mark.svg) center no-repeat; background-size: 100% 100%"></button>
+                                    </td>
+                                </div>
+                            </tr>
+                        </div>
+                        <div class="row">
+                            <tr>
+                                <div class="col-lg-1">
+                                    <td class="info">#2</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">01.01.2014</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="danger">500 - Rejected</td>
+                                </div>
+                                <div class="col-lg-3">
+                                    <td class="info">DESCRIBE X</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">
+                                        <button class="btn-visualize" style="width :25px; height:25px;background: url(img/graph.svg) center no-repeat; background-size: 100% 100%"></button>
+                                    </td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">
+                                        <button class="btn-details" style="width :25px; height:25px;background: url(img/question_mark.svg) center no-repeat; background-size: 100% 100%"></button>
+                                    </td>
+                                </div>
+                            </tr>
+                        </div>
+
+                        <div class="row">
+                            <tr>
+                                <div class="col-lg-1">
+                                    <td class="info">#4</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">06.06.2028</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="success">200 - OK</td>
+                                </div>
+                                <div class="col-lg-3">
+                                    <td class="info">SELECT . FROM . UNION WHERE .</td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">
+                                        <button class="btn-visualize" style="width :25px; height:25px;background: url(img/graph.svg) center no-repeat; background-size: 100% 100%"></button>
+                                    </td>
+                                </div>
+                                <div class="col-lg-2">
+                                    <td class="info">
+                                        <button class="btn-details" style="width :25px; height:25px;background: url(img/question_mark.svg) center no-repeat; background-size: 100% 100%"></button>
+                                    </td>
+                                </div>
+                            </tr>
+                        </div>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="codeeditor"></div>
+                <script>
+                    var myCodeMirror = CodeMirror(document.getElementById("codeeditor"),{lineNumbers: true, value: "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
+                        "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>        \n" +
+                        "PREFIX type: <http://dbpedia.org/class/yago/>\n" +
+                        "PREFIX prop: <http://dbpedia.org/property/>\n" +
+                        "SELECT ?lbl ?est\n" +
+                        "WHERE {\n" +
+                        "  ?country rdfs:label ?lbl .\n" +
+                        "  FILTER(bif:contains(?lbl, \"Republic\")) .\n" +
+                        "  ?country a type:Country108544813 ;\n" +
+                        "      prop:establishedDate ?est .\n" +
+                        "  FILTER(?est < \"1920-01-01\"^^xsd:date) .\n" +
+                        "}"});
+                </script>
+            </div>
+              <!---  <div id="yasque"></div>
+                <script>
+                    var yasqe = YASQE(document.getElementById("yasque"), {
+                        sparql: {
+                            showQueryButton: true
+                        }
+                    });
+                   /* var yasr = YASR(document.getElementById("yasr"), {
+                        //this way, the URLs in the results are prettified using the defined prefixes in the query
+                        getUsedPrefixes: yasqe.getPrefixesFromQuery
+                    });
+
+                    //link both together
+                    yasqe.options.sparql.callbacks.complete = yasr.setResponse;*/
+                </script>
+    </div> --->
+    </div>
+</article>
+
+<aside>
+    <!---weiterführende Informationen --->
+</aside>
+
+<footer>
+    <!--- Fußzeile --->
+</footer>
+</body>
+</html>
