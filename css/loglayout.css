@@ -13,13 +13,3 @@ p {
     text-align: center;
 }
 
-.flexcontainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.flexcontainer {
-    display: -webkit-flex;
-    display: flex;
-}
