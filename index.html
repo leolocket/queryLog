@@ -27,20 +27,41 @@
 </header>
 
 <article>
-    <div class="loadQuery-btn">
-        <input type="file" id="queryInput">
+    <div class="loadQuery-btn">y
+        <textarea id="textarea"></textarea>
+        <input type="file" name="file" id="file" class="inputfile" onclick="queryFileHandler()"/>
+        <label for="file">Choose a file</label>
         <script>
-            var input = document.getElementById("queryInput");
-            input.addEventListener("change", function () {
-                Array.prototype.forEach.call(input.files, function (file) {
-                    var reader = new FileReader();
-                    reader.addEventListener("load", function () {
-                        console.log("File", file.name, "starts with", reader.result.slice(0,20));
-                        yasque.setValue(reader.result.toString());
+            var query;
+
+            function queryFileHandler() {
+                var input = document.getElementById("file");
+                input.addEventListener("change", function () {
+                    Array.prototype.forEach.call(input.files, function (file) {
+                        var reader = new FileReader();
+                        reader.addEventListener("load", function () {
+                            console.log("File", file.name, "starts with", reader.result.slice(0,20));
+                            yasque.setValue(reader.result.toString());
+                            query = reader.result.toString();
+                            // By lines
+                            var lines = query.split('\n');
+                            for(var line = 0; line < lines.length; line++){
+                                retrievePrefixRegion(lines[line]);
+                            }
+
+                        });
+                        reader.readAsText(file);
                     });
-                    reader.readAsText(file);
                 });
-            });
+            }
+
+            function retrievePrefixRegion(str) {
+                var pattern = /PREFIX\s([^>]+)>/;
+                match = str.match(pattern);
+                if(match != null) {
+                   document.getElementById("textarea").value += match[1]+ ">" + '\n';
+                }
+            }
         </script>
     </div>
     <!--- Inhalt --->
@@ -191,8 +212,8 @@
 <script src="lib/codemirror.js"></script>
 <script src="mode/sparql/sparql.js"></script>
 <script src='YASGUI.YASQE/dist/yasqe.bundled.min.js'></script>
-
 <!--- JS --->
 <script src="js/script.js"></script>
+
 </body>
 </html>
